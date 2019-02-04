@@ -101,7 +101,7 @@ var NgxImageEditorComponent = /** @class */ (function () {
         }, 100);
     };
     NgxImageEditorComponent.prototype.saveImage = function () {
-        this.file.emit(new File([this.blob], this.state.ImageName, { type: this.state.ImageType }));
+        this.file.emit(new Blob([this.blob], { type: this.state.ImageType }));
     };
     NgxImageEditorComponent.prototype.initializeCropper = function () {
         var _this = this;

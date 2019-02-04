@@ -136,7 +136,7 @@ class NgxImageEditorComponent {
      * @return {?}
      */
     saveImage() {
-        this.file.emit(new File([this.blob], this.state.ImageName, { type: this.state.ImageType }));
+        this.file.emit(new Blob([this.blob], { type: this.state.ImageType }));
     }
     /**
      * @return {?}

@@ -315,7 +315,7 @@ export class NgxImageEditorComponent implements AfterViewInit, OnInit, OnDestroy
   }
 
   @Output()
-  public file: EventEmitter<File> = new EventEmitter<File>();
+  public file: EventEmitter<Blob> = new EventEmitter<Blob>();
 
   public constructor() {
     this.zoomIn          = 0;
@@ -424,7 +424,7 @@ export class NgxImageEditorComponent implements AfterViewInit, OnInit, OnDestroy
   }
 
   public saveImage() {
-    this.file.emit(new File([this.blob], this.state.ImageName, {type: this.state.ImageType}));
+    this.file.emit(new Blob([this.blob], {type: this.state.ImageType}));
   }
 
   private initializeCropper() {
